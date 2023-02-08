@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WEB_APPS.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+        <script src="Scripts/jquery-3.6.3.min.js"></script> 
+       <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        body{
+           background-color:honeydew
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <div class ="row">
+                <h1>Welcome to ASP.net </h1>
+                <p>This Is Sachin&nbsp; This Website Will Teach Us About ASP.net</p>  <asp:Label ID="lbluserinfo" runat="server" Width="300px" /><asp:Button Text="Logout" ID="btnlogout" runat="server" OnClick="btnlogout_Click" Width="100px" />
+                <hr />
+                <asp:Menu runat="server" Orientation="Horizontal"  Font-Names="Verdana" Font-Size="10" ForeColor="#003300" Height="20px" StaticSubMenuIndent="20px" BackColor="#ffffcc">
+                    <DynamicHoverStyle BackColor="#FFFF66" ForeColor="Blue" BorderColor="White" Font-Bold="True" Font-Names="Times New Roman" Font-Size="Medium" Font-Strikeout="False" />
+                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" BackColor="#FFFFCC" BorderColor="#003300" BorderStyle="Solid" BorderWidth="2px" />
+                    <DynamicMenuStyle BackColor="#E3EAEB" />
+                    <DynamicSelectedStyle BackColor="#1C5E55" />
+                    <Items>
+                        <asp:MenuItem Text="Home" NavigateUrl="~/Homepage.aspx" />
+                        <asp:MenuItem Text="Calculator" NavigateUrl="~/calci.aspx" />
+                        <asp:MenuItem Text="Database" NavigateUrl="~/ProductApp.aspx" />
+                        <%--<asp:MenuItem Text="Database" NavigateUrl="~/SQlProduct.aspx" />--%>
+                        <asp:MenuItem Text="Validation" NavigateUrl="~/Validation_form.aspx" />
+                        <asp:MenuItem Text="State Management">
+                            <asp:MenuItem Text ="Input Page" NavigateUrl="~/InputPage.aspx" />
+                            <asp:MenuItem Text ="Receipient Page" NavigateUrl="~/RecipiantPage.aspx" />
+                            <asp:MenuItem Text ="ShoppingCart" NavigateUrl="~/ShoppingCart.aspx"/>
+                            <asp:MenuItem Text ="billing" NavigateUrl="~/BillingPage.aspx"  ></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Caching">
+                            <asp:MenuItem Text="Fragment Cacheing" NavigateUrl="~/Cacheing.aspx" />
+                            <asp:MenuItem Text="Data Cacheing" NavigateUrl="~/DataCacheing.aspx" />
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Login Controls" />
+                        <asp:MenuItem Text="Theme">
+                            <asp:MenuItem Text="Red" />
+                            <asp:MenuItem Text="black" />
+                            <asp:MenuItem Text="blue" />
+                        </asp:MenuItem>
+                    </Items>
+                    <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <StaticSelectedStyle BackColor="#1C5E55" />
+                </asp:Menu>
+                 
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <asp:ContentPlaceHolder runat="server" ID="Maincontent">
+
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div class="col-3">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <asp:AdRotator  AdvertisementFile="~/Ads.xml" runat="server" />
+                        </div>
+                        <div class="row">
+                            <asp:Calendar runat="server"></asp:Calendar>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <p style="text-align:center">
+                    <i>copyright sachin-<asp:Label Text="" ID="lblyear" runat="server"></asp:Label></i>
+                </p>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

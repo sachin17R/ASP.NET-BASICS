@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements xmlns="http://schemas.microsoft.com/AspNet/AdRotator-Advertisement-File-1.2">
+  <Ad xmlns="">
+    <ImageUrl>./Images/hp.png</ImageUrl>
+    <AlternateText>Hp Image</AlternateText>
+    <NavigateUrl>https://www.hp.com/us-en/home.html</NavigateUrl>
+    <Impressions>50</Impressions>
+  </Ad>
+
+  <Ad xmlns="">
+    <ImageUrl>./Images/dell.jfif</ImageUrl>
+    <AlternateText>Dell Image</AlternateText>
+    <NavigateUrl>https://www.google.co.in</NavigateUrl>
+    <Impressions>50</Impressions>
+  </Ad>
+</Advertisements>
