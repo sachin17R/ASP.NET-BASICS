@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    var items = new List<SelectListItem>{
+        new SelectListItem{Text = "+"},
+        new SelectListItem{Text = "-"},
+        new SelectListItem{Text = "x"},
+        new SelectListItem{Text = "/"},
+    };
+}
+<style>
+    .display{
+        color:red;
+        text-align:center;
+        font-size:20pt;
+    }
+    #div1{
+        display:inline;
+    }
+</style>
+<h2>Caluculator Application</h2>
+
+<div class="container">
+    <div class="row" id="div1">
+        @using (Html.BeginForm())
+        {
+            @Html.Editor("first", new {htmlAttributes = new {placeholder ="enter first number",@class="form-control" } })
+          @Html.DropDownList("operand",items, new { @class = "form-control" })
+@Html.Editor("second",new {htmlAttributes=new {@class="form-control",placeholder="Enter Second Number" } })
+            <button class="btn btn-success">Evaluate</button>
+        }
+    </div>
+    <div class="row display">
+        @*@if (ViewBag.Message != null)
+        {
+        <p>@ViewBag.Message</p>
+        }*@
+
+        @*@if(ViewData["Message"] != null)
+        {
+        <p>@ViewData["Message"]</p>
+        }*@
+
+        @if (TempData.ContainsKey("Message"))
+        {
+        <p>@TempData["Message"]</p>
+        }
+    </div>
+</div>
+

@@ -1,0 +1,32 @@
+﻿@model List< MVCframework.DataComponent.CarInfo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class=" table table-bordered table-striped table-hover" >
+    <tr>
+        <td>Sl No</td>
+        <td>Brand Name</td>
+        <td>Car Name</td>
+        <td>Car Price</td>
+        <td colspan="2" style="text-align:center">Other Info</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.EntryId</td>
+        <td>@item.BrandName</td>
+        <td>@item.Model</td>
+        <td>@item.Price</td>
+        <td>@Html.ActionLink("View More","Edit",new {id=item.EntryId },new {@class="btn btn-primary"})</td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id = item.EntryId },
+new { onclick = "return confirm('Are sure wants to delete?');" })
+        </td>
+    </tr>
+    }
+</table>
+

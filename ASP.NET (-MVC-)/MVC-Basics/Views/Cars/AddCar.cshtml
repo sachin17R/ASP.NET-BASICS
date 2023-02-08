@@ -1,0 +1,60 @@
+﻿@model MVCframework.DataComponent.CarInfo
+
+@{
+    ViewBag.Title = "AddCar";
+}
+
+<h2>Add New Car</h2>
+
+@using (Html.BeginForm()){ 
+
+<table cellspacing="20" cellpadding="10">
+    
+    <tr>
+        <td>Brand Name</td>
+        <td>@Html.EditorFor(m => m.BrandName, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>Car Name</td>
+        <td>@Html.EditorFor(m => m.Model, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>Body Type</td>
+        <td>@Html.DropDownListFor((m)=>m.BodyType,new List<SelectListItem> {
+           new SelectListItem{Text = "Hatchback" },
+           new SelectListItem{Text = "Sedan" },
+           new SelectListItem{Text = "SUV" },
+           new SelectListItem{Text = "MUV" }
+
+       })</td>
+    </tr>
+    <tr>
+        <td>Price</td>
+        <td>@Html.EditorFor(m => m.Price, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>Fuel Type</td>
+        <td>@Html.DropDownListFor((m)=>m.FuelType,new List<SelectListItem> {
+           new SelectListItem{ Text = "Petrol"},
+           new SelectListItem{ Text = "Diesel"},
+           new SelectListItem{ Text = "Electric"},
+           new SelectListItem{ Text = "Hybrid"}
+       })</td>
+    </tr>
+    <tr>
+        <td>Engine</td>
+        <td>@Html.EditorFor(m => m.Engine, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>Capacity</td>
+        <td>@Html.EditorFor(m => m.Capacity, new { @class = "form-control" })</td>
+    </tr>
+    <tr></tr>
+    <tr>
+        <td></td>
+        <td> <button type="submit" class="btn btn-danger">Add Car</button></td>
+    </tr>
+
+</table>
+}
+
